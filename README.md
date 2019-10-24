@@ -7,18 +7,19 @@ Platfor is a PHP and IPO based micro framework that helps you quickly write simp
 
 ## Features
 
+
+* Micro Services
+    * Standard IPO architecture
+    * Micro services architecture
 * Powerful router
     * Standard and custom HTTP methods
     * Route parameters with wildcards and conditions
     * Route redirect, halt, and pass
     * Route middleware
-* Resource Locator and DI container
-* Template rendering with custom views
 * Flash messages
-* Encrypt cookie data
+    * Message Taker
+    * Multi url request once
 * HTTP caching
-* Logging with custom log writers
-* Error handling and debugging
 * Middleware and hook architecture
 * Simple configuration
 
@@ -202,4 +203,4 @@ PHP programmers to best practices and good information.
 
 The Platfor Framework is released under the MIT public license.
 
-<https://github.com/ifehirm/Platfor/blob/master/LICENSE>
+<https://github.com/ifehrim/Platfor/blob/master/LICENSE>
