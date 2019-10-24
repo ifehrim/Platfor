@@ -5,41 +5,17 @@
 
 Platfor is a PHP and IPO based micro framework that helps you quickly write simple yet powerful micro services applications and APIs.
 
-## Features
-
-
-* Micro Services
-    * Standard IPO architecture
-    * Micro services architecture
-* Powerful router
-    * Standard and custom HTTP methods
-    * Route parameters with wildcards and conditions
-    * Route redirect, halt, and pass
-    * Route middleware
-* Flash messages
-    * Message Taker
-    * Multi url request once
-* HTTP caching
-* Middleware and hook architecture
-* Simple configuration
-
-## Getting Started
-
-### Install
-
-You may install the Platfor Framework with Composer (recommended) or manually.
-
-### System Requirements
-
-You need **PHP >= 5.3.0**. If you use encrypted cookies, you'll also need the `mcrypt` extension.
-
 ### Hello World Tutorial For [Index.php]
+
+http://localhost/blog/edit/2012/12/10?token=123
 
 Instantiate a Platfor application:
 ```php
-//http://localhost/blog/edit/2012/12/10?token=123
-$app = new App();
+
+$app = App::init();
+
 Http::get('/blog/*', $app, [Home::class, 'getInfo']);
+
 $app->execute();
 ```
 
@@ -79,6 +55,47 @@ Response For That:
   }
 }
 ```
+
+
+## Features
+
+* Micro Services
+    * Standard IPO architecture
+    * Micro services architecture
+* Powerful router
+    * Standard and custom HTTP methods
+    * Route parameters with wildcards and conditions
+    * Route redirect, halt, and pass
+    * Route middleware
+* Flash messages
+    * Message Taker
+    * Multi url request once
+* HTTP caching
+* Middleware and hook architecture
+* Simple configuration
+
+## Getting Started
+
+### Install
+
+You may install the Platfor Framework with Git (recommended) or manually.
+
+Git:
+```bash
+git clone https://github.com/ifehrim/Platfor.git
+```
+
+Composer:
+```bash
+composer require platfor/ifehrim
+```
+
+
+### System Requirements
+
+You need **PHP >= 5.3.0**. If you use encrypted cookies, you'll also need the `mcrypt` extension.
+
+
 
 ### Setup your web server
 
