@@ -82,13 +82,21 @@ You may install the Platfor Framework with Git (recommended) or manually.
 
 Git:
 ```bash
-git clone https://github.com/ifehrim/Platfor.git
+$ git clone https://github.com/ifehrim/Platfor.git
 ```
 
 Composer:
 ```bash
-composer require platfor/ifehrim
+$ composer require platfor/ifehrim
 ```
+
+
+You may quickly test this using the built-in PHP server:
+```bash
+$ php -S localhost:8000 -t ./
+```
+
+Going to http://localhost:8000/blog/edit/HelloWorld?token=123 will now display "Hello, world".
 
 
 ### System Requirements
