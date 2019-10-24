@@ -1,5 +1,7 @@
 # Platfor MicroServices Framework [PHP]
 
+[![Build Status](https://travis-ci.org/ifehirm/Platfor.svg?branch=master)](https://travis-ci.org/ifehrim/Platfor)
+
 Platfor is a PHP and IPO based micro framework that helps you quickly write simple yet powerful micro services applications and APIs.
 
 ## Features
