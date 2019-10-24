@@ -37,14 +37,9 @@ You need **PHP >= 5.3.0**. If you use encrypted cookies, you'll also need the `m
 
 Instantiate a Platfor application:
 ```php
+//http://localhost/blog/edit/2012/12/10?token=123
 $app = new App();
-```
-Define a HTTP GET route:
-```php
 Http::get('/blog/*', $app, [Home::class, 'getInfo']);
-```
-Run the Platfor application:
-```php
 $app->execute();
 ```
 
