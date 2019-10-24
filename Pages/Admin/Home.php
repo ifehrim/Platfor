@@ -25,7 +25,7 @@ class Home
 
         $app->take('Home',[
             'name'=>'Title',
-            'page'=>'-',
+            'page'=>'Hello World!',
             'date'=>time(),
         ]);
 

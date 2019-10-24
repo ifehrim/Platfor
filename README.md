@@ -33,7 +33,7 @@ You may install the Platfor Framework with Composer (recommended) or manually.
 
 You need **PHP >= 5.3.0**. If you use encrypted cookies, you'll also need the `mcrypt` extension.
 
-### Hello World Tutorial
+### Hello World Tutorial For [Index.php]
 
 Instantiate a Platfor application:
 ```php
@@ -47,6 +47,44 @@ Run the Platfor application:
 ```php
 $app->execute();
 ```
+
+### Hello World Tutorial For [Home.php]
+
+Instantiate a Platfor application:
+```php
+class Home
+{
+    use _Frame;
+    
+    //middileware requirments if You need
+    static $__before=[
+        Auth::class
+    ];
+
+    public static function getInfo(App $app){
+
+        $app->take('Home',[
+            'name'=>'Title',
+            'page'=>'Hello World!',
+            'date'=>time(),
+        ]);
+        
+        return $app;
+    }
+}
+```
+Response For That:
+```json
+{
+  "edit": "ok",
+  "Home": {
+    "name": "Title",
+    "page": "Hello World!",
+    "date": 1571915345
+  }
+}
+```
+
 ### Setup your web server
 
 #### Apache
