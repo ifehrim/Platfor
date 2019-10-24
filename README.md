@@ -7,8 +7,6 @@ Platfor is a PHP and IPO based micro framework that helps you quickly write simp
 
 ### Hello World Tutorial For [Index.php]
 
-http://localhost/blog/edit/2012/12/10?token=123
-
 Instantiate a Platfor application:
 ```php
 
