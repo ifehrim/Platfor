@@ -1,17 +1,32 @@
 <?php
+/**
+ * Created by LooL.
+ * User: ifehrim@gmail.com
+ * Date: 2019-11-04
+ * Time: 12:57
+ */
 
-namespace Packs;
+namespace Packs\Https;
 
 
+use _App;
 use App;
 
-class Http
+class Alm
 {
-    use _Frame;
+    use _App;
+
+    const version='1.0.0';
+
+
+    public static function init()
+    {
+        header('Y-Powered-By:LooL-Http/'.self::version);
+    }
 
     public static $params = [];
 
-    public static function matchUrl($pattern, $case_sensitive = false)
+    public static function match($pattern, $case_sensitive = false)
     {
 
         static::$params = [];
@@ -66,47 +81,49 @@ class Http
 
     /**
      * @param $route
-     * @param App $app
      * @param callable $class
      * @return App|mixed|null
      */
-    public static function get($route, App $app, $class)
+    public static function get($route,$class)
     {
-        if (static::matchUrl($route)) {
-            return static::__callClass($app, $class, '__run');
+        if (static::match($route)) {
+            return static::__callClass(App::$app, $class, '__run');
         }
-        return $app;
+        return App::$app;
     }
 
     /**
      * @param $route
-     * @param App $app
      * @param callable $class
      * @return App|mixed|null
      */
-    public static function post($route, App $app, $class)
+    public static function post($route,  $class)
     {
-        if (static::matchUrl($route)) {
-            return static::__callClass($app, $class, '__run');
+        if (static::match($route)) {
+            return static::__callClass(App::$app, $class, '__run');
         }
-        return $app;
+        return App::$app;
     }
 
     /**
      * @notice Please make sure route must require @action
      * @param $route
-     * @param App $app
      * @param callable $class
      * @return App|mixed|null
      */
-    public static function model($route, App $app, $class)
+    public static function model($route, $class)
     {
-        if (static::matchUrl($route)) {
-            if (isset(static::$params['action'])) $class=[$class,static::$params['action']];
 
-            return static::__callClass($app, $class, '__run');
+        if (static::match($route)) {
+            if (isset(static::$params['action'])) $class=[$class,static::$params['action']];
+            return static::__callClass(App::$app, $class, '__run');
         }
-        return $app;
+        return App::$app;
+    }
+
+    public static function respond()
+    {
+        echo json_encode(App::$app->takes);
     }
 
 

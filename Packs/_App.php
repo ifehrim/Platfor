@@ -1,11 +1,12 @@
 <?php
+/**
+ * Created by LooL.
+ * User: ifehrim@gmail.com
+ * Date: 2019-11-04
+ * Time: 12:57
+ */
 
-
-namespace Packs;
-
-use App;
-
-trait _Frame
+trait _App
 {
 
 
@@ -66,6 +67,8 @@ trait _Frame
         if (!$app->isCommit()) {
             try {
                 $_tmp=null;
+
+
                 if (is_array($class)){
                     if (class_exists($class[0]))
                     $_tmp = call_user_func_array([$class[0], $func], [$app,$class[1]]);
@@ -73,6 +76,7 @@ trait _Frame
                     if (class_exists($class))
                     $_tmp = call_user_func([$class, $func], $app);
                 }
+
                 if ($_tmp instanceof App) $app = $_tmp;
             } catch (\Exception $e) {
                 print_r($e);

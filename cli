@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Created by LooL.
+ * User: ifehrim@gmail.com
+ * Date: 2019-11-04
+ * Time: 12:57
+ */
+
+use Packs\Consoles\Alm as Console;
+
+include __DIR__.'/bootstrap.php';
+
+
+App::init();
+
+Console::init();
+
+include __DIR__ . '/App/Consoles/route.php';
+
+Console::execute();
+
+

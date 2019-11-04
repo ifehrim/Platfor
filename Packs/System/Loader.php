@@ -1,12 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created by LooL.
  * User: ifehrim@gmail.com
  * Date: 10/24/2018
  * Time: 12:50
  */
 
-namespace Packs;
+namespace Packs\System;
 
 
 class Loader {
@@ -16,7 +16,7 @@ class Loader {
      *
      * @var array
      */
-    protected static $dirs = array();
+    protected static $dirs = [];
 
 
     /*** AutoLoading Functions ***/
@@ -27,12 +27,12 @@ class Loader {
      * @param bool $enabled Enable/disable autoLoading
      * @param array $dirs Autoload directories
      */
-    public static function autoload($enabled = true, $dirs = array()) {
+    public static function autoload($enabled = true, $dirs = []) {
         if ($enabled) {
-            spl_autoload_register(array(__CLASS__, 'loadClass'));
+            spl_autoload_register([__CLASS__, 'loadClass']);
         }
         else {
-            spl_autoload_unregister(array(__CLASS__, 'loadClass'));
+            spl_autoload_unregister([__CLASS__, 'loadClass']);
         }
 
         if (!empty($dirs)) {
@@ -46,8 +46,8 @@ class Loader {
      * @param string $class Class name
      */
     public static function loadClass($class) {
-        $class_file = str_replace(array('\\', '_'), '/', $class).'.php';
-        $class_file_old = str_replace(array('\\'), '/', $class).'.php';
+        $class_file = str_replace('\\', '/', $class).'.php';
+        $class_file_old = str_replace('\\', '/', $class).'.php';
         foreach (self::$dirs as $dir) {
             $file = $dir.'/'.$class_file;
             if (file_exists($file)) {
@@ -77,5 +77,9 @@ class Loader {
         else if (is_string($dir)) {
             if (!in_array($dir, self::$dirs)) self::$dirs[] = $dir;
         }
+    }
+
+    public static function getDirs(){
+        return self::$dirs;
     }
 }
