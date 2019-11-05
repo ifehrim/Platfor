@@ -1,0 +1,9 @@
+[submodule "Packs/App"]
+	path = Packs/App
+	url = https://gitee.com/lool-packages/App.git
+[submodule "Packs/Console"]
+	path = Packs/Console
+	url = https://gitee.com/lool-packages/Console.git
+[submodule "Packs/System"]
+	path = Packs/System
+	url = https://gitee.com/lool-packages/System.git

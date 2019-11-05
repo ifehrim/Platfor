@@ -10,5 +10,5 @@ use Packs\Consoles\Alm as Console;
 use Consoles\Command;
 
 
-Console::model('info',[Command::class,'getInfo']);
+Console::model('packager',Command::class);
 

@@ -8,11 +8,14 @@
 
 use PHPUnit\Framework\TestCase;
 
-final class ExampleTest extends TestCase
+include dirname(__DIR__).'/bootstrap.php';
+
+class AppTest extends TestCase
 {
 
-    public function testCanBeUsedAsString(): void
+    public function testAppInter(): void
     {
+
 
         $this->assertEquals(
             'user@example.com',

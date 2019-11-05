@@ -13,6 +13,8 @@ include 'Packs/System/Loader.php';
 
 if (file_exists(__DIR__.'vendor/autoload.php')) include 'vendor/autoload.php';
 
+$_ENV['PROJECT_PATH']=__DIR__;
+
 Loader::autoload(true, [
     dirname(__DIR__),
     __DIR__.'/Packs',
