@@ -7,9 +7,9 @@
  * Time: 12:57
  */
 
-use Packs\Consoles\Alm as Console;
+use Packs\Console\Alm as Console;
 
-include __DIR__.'/bootstrap.php';
+include __DIR__.'/Packs/App/Boot.php';
 
 
 App::init();

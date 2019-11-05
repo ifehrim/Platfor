@@ -8,7 +8,7 @@
 
 use Packs\Https\Alm as Http;
 
-include __DIR__ . '/../bootstrap.php';
+include __DIR__ . '/../Packs/App/Boot.php';
 
 App::init();
 

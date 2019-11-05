@@ -7,3 +7,6 @@
 [submodule "Packs/System"]
 	path = Packs/System
 	url = https://gitee.com/lool-packages/System.git
+[submodule "Packs/Https"]
+	path = Packs/Https
+	url = https://gitee.com/lool-packages/Https.git
